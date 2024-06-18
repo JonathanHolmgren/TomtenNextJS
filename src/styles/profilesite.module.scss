@@ -1,0 +1,79 @@
+@import "./settings/__settings";
+
+.profileContainer {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  h2 {
+    width: 100%;
+    margin: auto;
+    text-align: left;
+  }
+
+  button {
+    cursor: pointer;
+    margin-top: 1em;
+    padding: 0.25em 1.25em;
+    background-image: linear-gradient($c-red-dark, $c-red-light);
+    border-radius: 5px;
+    border: none;
+    color: $c-gray-light;
+    font-size: 1.25rem;
+
+    &:hover {
+      background-image: linear-gradient($c-red-light, $c-red-dark);
+      color: $c-gray-dark;
+    }
+  }
+}
+
+.ProfileheaderList {
+  width: 100%;
+  margin-top: 0.5em;
+  font-size: 1.5rem;
+  list-style-type: none;
+  display: block;
+  justify-content: center;
+
+  li {
+    padding: 1em;
+
+    a {
+      color: $c-blue-dark;
+      font-weight: bold;
+
+      &:hover {
+        color: $c-red-light;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .ProfileheaderList {
+    display: flex;
+  }
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.profileform input,
+.profileform textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.FetchButton {
+  display: flex;
+  justify-content: end;
+
+  button {
+    margin-left: 0.5em;
+  }
+}
