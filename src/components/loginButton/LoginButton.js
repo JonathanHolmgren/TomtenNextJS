@@ -2,6 +2,7 @@ import styles from "@/styles/header.module.scss";
 import logoutUser from "@/utils/logoutUser";
 import { useContext } from "react";
 import { LoggedInContext } from "@/pages/_app";
+import Link from "next/link";
 
 const LoginButton = (props) => {
   const {
@@ -36,7 +37,6 @@ const LoginButton = (props) => {
 
   const closeMenu = (e) => {
     e.target.parentNode.style.display = "none";
-    props.setProfileShow(true);
   };
 
   return isLoggedIn ? (
@@ -54,9 +54,9 @@ const LoginButton = (props) => {
         <i className="fa fa-caret-down"></i>
       </button>
       <div className={styles.logoutContent}>
-        <a data-testid="menuItem" onClick={closeMenu}>
-          Profil
-        </a>
+        <Link href={"/profile"} data-testid="menuItem" onClick={closeMenu}>
+          profile
+        </Link>
         <a onClick={handleLogout}>Logga ut</a>
       </div>
     </div>
