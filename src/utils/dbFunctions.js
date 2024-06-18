@@ -41,6 +41,13 @@ export async function deleteUser(id) {
   return await User.deleteOne({ _id: id });
 }
 
+export async function deleteUserPaymentMethod(userName, cardNr) {
+  return await User.updateOne(
+    { userName: userName },
+    { $pull: { cardNr: cardNr } }
+  );
+}
+
 // SHOWTIMES
 
 export async function getShowtimes() {
@@ -130,6 +137,10 @@ export async function getBookings(userId) {
 
 export async function addBooking(data) {
   return await Booking.create(data);
+}
+
+export async function deleteBooking(id) {
+  return await Booking.deleteOne({ _id: id });
 }
 
 // REVIEWS
